@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BOOTSTARP</title>
+	<meta charset="utf-8">
+	<!-- ie渲染方式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<style type="text/css">
+		body{ padding-top:70px; padding-bottom: 10px;}
+		.carousel{
+			height: 450px;
+			background-color: #000;
+		}
+		.carousel .item{
+			height: 450px;
+			background-color: #000;
+		}
+		.carousel img{
+			width: 100%;
+		}
+		.carousel p{
+			margin-bottom: 20px;
+			line-height: 1.8em;
+			font-size: 20px;		
+		}
+		nav{background-color: black;}
+		.navbar-brand,.nav li a {
+			color:#999;
+		}
+		.nav li a:hover{
+			background: #2196f3;
+		}
+		.row{margin:30px 0;}
+		.caption{text-align: center;}
+		.caption p{
+			margin-bottom: 20px;
+			font-size: 18px;
+			line-height: 1.8em;
+		}
+		.feature-heading{
+			font-size: 50px;
+			color: #2a6496;
+			margin-top:0px; 
+		}
+		.text-muted{
+			font-size: 28px;
+			color:#999; 
+		}
+		.badge{
+			font-size: 6px;
+			color: pink;
+			background-color: #D4D4D4ss;
+			border-radius: 5px;
+		}	
+	</style>
+	<script type="text/javascript">
+	<!-- 通过下拉列表打开标签 -->
+		$(document).ready(function(){
+			$("#example-navbar .dropdown-menu a").click(function(){
+				var href=$(this).attr('href');
+				$(".nav-tabs a[href='"+href+"']").tab('show');
+			})
+		});
+	</script>
+</head>
+<body>
+<!-- 导航条 -->
+<nav class="navbar navbar- navbar-fixed-top " role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">现在浏览器博物馆</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="example-navbar">
+      <ul class="nav navbar-nav">
+        <li class=""><a href="#">综述</a></li>
+        <li><a href="#">概述</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">特点<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#chrome">Chrome</a></li>
+            <li><a href="#firefox">Firefox</a></li>
+            <li><a href="#opera">Opera</a></li>
+            <li><a href="#">Safari</a></li>
+            <li><a href="#ie">IE</a></li>
+          </ul>
+        </li>
+        <li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>       
+      </ul>
+      <form class="navbar-form navbar-right" role='search'>
+	   	<div class="form-group">
+	   		<input type="text" class="form-control" placeholder="请输入关键词" />
+	   	</div>
+	    <button type="submit" class="btn btn-default">搜索</button>
+ 	  </form>
+    </div><!-- /.navbar-collapse -->
+    
+  </div><!-- /.container-fluid -->
+  
+</nav>
+<!-- carousel图片滚动 -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	<ol class="carousel-indicators">
+		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+	</ol>
+	<div class="carousel-inner" role="listbox">
+		<div class="item active">
+			<img src="http://images.apple.com/cn/macbook-air/images/overview_hero_hero.jpg" alt="">
+			<div class="carousel-caption">
+			<h1>Chrome</h1>
+			<p>11 英寸 MacBook Air 充电一次可运行长达 9 小时，而 13 英寸机型则可运行长达 12 小时。</p>
+			<button class="btn btn-warning">点我下载</button>
+			</div>
+		</div>
+		<div class="item">
+			<img src="http://images.apple.com/cn/macbook-air/images/overview_processor_hero.jpg" alt="...">
+			<div class="carousel-caption">
+			<p>无论是什么任务，配备 Intel HD Graphics 5000 图形处理器的第四代 Intel Core 处理器都能应对自如。</p>
+			<button class="btn btn-warning">点我下载</button>
+			</div>
+		</div>
+		<div class="item">
+			<img src="http://images.apple.com/cn/macbook-air/images/overview_wireless_hero_enhanced.png" alt="">
+			<div class="carousel-caption">
+			<p>有了新一代 802.11ac 技术，MacBook Air 令 Wi-Fi 速度超越极限。</p>
+			<button class="btn btn-warning">点我下载</button>
+			</div>
+		</div>
+		<div class="item">
+			<img src="http://images.apple.com/cn/macbook-air/images/overview_hero_hero.jpg" alt="">
+			<div class="carousel-caption">
+			<p>无论是什么任务，配备 Intel HD Graphics 5000 图形处理器的第四代 Intel Core 处理器都能应对自如。</p>
+			<button class="btn btn-warning">点我下载</button>
+			</div>
+		</div>
+		<div class="item">
+			<img src="http://images.apple.com/cn/macbook-air/images/overview_hero_hero.jpg" alt="">
+			<div class="carousel-caption">
+			<p>11 英寸 MacBook Air 充电一次可运行长达 9 小时，而 13 英寸机型则可运行长达 12 小时。</p>
+			<button class="btn btn-warning">点我下载</button>
+			</div>
+		</div>
+	</div>
+	<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+		<span class="icon-prev" aria-hidden="true"></span>
+		<span class="sr-only">上一页</span>
+	</a>
+	<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+		<span class="icon-next" aria-hidden="true"></span>
+		<span class="sr-only">下一页</span>
+	</a>
+</div>
+<!-- 三栏布局-->
+<div class="container">
+	<div class="row caption">
+		<div class="col-md-4 col-xs-12 ">
+			<img src="images/3.jpg" class="img-circle" width="150px">
+			<h2>Chrome</h2>
+			<p>无论是什么任务，配备 Intel HD Graphics 5000 图形处理器的第四代 Intel Core 处理器都能应对自如。</p>
+			<a href="#" class="btn btn-default" role='button'>点我下载</a>
+		</div>
+		<div class="col-md-4 col-xs-12">
+			<img src="images/2.jpg" class="img-circle" width="150px">
+			<h2>Firefox</h2>
+			<p>无论是什么任务，配备 Intel HD Graphics 5000 图形处理器的第四代 Intel Core 处理器都能应对自如。</p>
+			<a href="#" class="btn btn-default" role='button'>点我下载</a>
+		</div>
+		<div class="col-md-4 col-xs-12">
+			<img src="images/1.jpg" class="img-circle" width="150px">
+			<h2>IE10</h2>
+			<p>无论是什么任务，配备 Intel HD Graphics 5000 图形处理器的第四代 Intel Core 处理器都能应对自如。</p>
+			<a href="#" class="btn btn-default" role='button'>点我下载</a>
+		</div>
+	</div>
+	<hr>
+</div>
+<!-- 标签页 -->
+<div class="container">
+	<ul class="nav nav-tabs" role="tablist">
+	  <li class="active"><a href="#chrome" role="tab" data-toggle="tab">Chrome</a></li>
+	  <li><a href="#firefox" role="tab" data-toggle="tab">Firefox</a></li>
+	  <li><a href="#ie" role="tab" data-toggle="tab">IE10</a></li>
+	  <li><a href="#opera" role="tab" data-toggle="tab">Opera</a></li>
+	</ul>
+	<!-- Tab panes -->
+	<div class="tab-content">
+	  <div class="tab-pane active row feault" id="chrome">
+	  	<div class="col-md-5">
+	  		<img src="images/1.jpg" class="img-rounded" width="200px">
+	  	</div>
+	  	<div class="col-md-7">
+	  		<h2 class="feature-heading">Opera
+	  		<span class="text-muted">小众但一用</span></h2>
+	  		<p class="lead">无论是什么任务，配备 Intel HD Graphics 5000 图形处理器的第四代 Intel Core 处理器都能应对自如。</p>
+	  	</div>
+	  </div>
+	  <div class="tab-pane row feault" id="firefox">
+	  	<div class="col-md-7">
+	  		<h2 class="feature-heading">Opera
+	  		<span class="text-muted">小众但一用</span></h2>
+	  		<p class="lead">无论是什么任务，配备 Intel HD Graphics 5000 图形处理器的第四代 Intel Core 处理器都能应对自如。</p>
+	  	</div>
+	  	<div class="col-md-5">
+	  		<img src="images/2.jpg" class="img-thumbnail" width="200px">
+	  	</div>
+	  </div>
+	  <div class="tab-pane row feault" id="ie">
+	  	<div class="col-md-5">
+	  		<img src="images/3.jpg" class="img-circle" width="200px">
+	  	</div>
+	  	<div class="col-md-7">
+	  		<h2 class="feature-heading">Opera
+	  		<span class="text-muted">小众但一用</span></h2>
+	  		<p class="lead">无论是什么任务，配备 Intel HD Graphics 5000 图形处理器的第四代 Intel Core 处理器都能应对自如。</p>
+	  	</div>
+	  </div>
+	  <div class="tab-pane row feault" id="opera">
+	  	<div class="col-md-7">
+	  		<h2 class="feature-heading">Opera
+	  		<span class="text-muted">小众但一用</span></h2>
+	  		<p class="lead">无论是什么任务，配备 Intel HD Graphics 5000 图形处理器的第四代 Intel Core 处理器都能应对自如。</p>
+	  	</div>
+	  	<div class="col-md-5">
+	  		<img src="images/1.jpg" class="img-rounded" width="200px">
+	  	</div>
+	</div>
+</div>
+<!-- 底部 -->
+<hr class="divider">
+<footer>
+	<p class="pull-right"><a href="#top">回到顶部</a></p>
+	<p>Copyright © 2016 </p>
+</footer>
+<!-- 导航栏关于弹出框 -->
+<div class="modal fade" id="about">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h4 class="modal-title">关于</h4>
+			</div>
+			<div class="modal-body">
+				<p>将任意文本和一个可选的关闭按钮组合在一起就能组成一个警告框，.alert 类是必须要设置的，另外我们还提供了有特殊意义的4个类（例如，.alert-success），代表不同的警告信息。&hellip;</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BOOTSTARP</title>
+	<meta charset="utf-8">
+	<!-- ie渲染方式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<style type="text/css">
+		body{padding: 0;margin:0;}
+		a{color: black;text-decoration:none;}
+		.container-fluid .navbar{padding:0;margin: 0;}
+		.container-fluid,.navbar{background: black;}
+		.logo a{
+			width: 128px;
+			display: block;
+			height: 60px;
+			background: url(images/mk_logo.png?t=1) no-repeat center center;
+			text-indent: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			-webkit-transition: background color 0.2s;
+			-moz-transition: background color 0.2s;
+			transition: background color 0.2s;
+		}
+		.nav_header{
+			padding-left: 20px;
+		}
+		.nav_header li a{
+			height: 60px;
+			padding-top:20px; 
+			color:white;
+		}
+		#nav_collapse ul{
+			height: 60px;
+		}
+		.gg{
+			width: 70px;
+			height: 60px;
+		}
+		.elevator {
+		    position: fixed;
+		    padding: 0px 15px;
+		    bottom: 120px;
+		    right: 0;
+		    z-index: 1000;
+		    background-color: #fff;
+		    box-shadow: -2px 2px 5px 3px #f3f3f3;
+		}
+		.elevator ul li{
+			padding: 18px 0;
+		}
+		.elevator a i {
+    		font-size: 24px;
+   			color: #b5b9bc;
+		}	
+		.elevator a i:hover {
+   			color: #222222;
+		}	
+		.elevator .elevator-app{
+			position: relative;
+		}
+		.elevator .elevator-weixin{
+			position: relative;
+		}
+		.elevator #elevator-app{
+			width:160px;height: 185px; 
+			position: absolute;
+			left:-160px;top: -160px;
+			background:url(images/app.png);
+			box-shadow:2px 0px 0px 0px gery;
+			display: none;
+		}
+		.elevator #elevator-weixin{
+			width: 160px;height: 200px;
+			position: absolute;
+			left: -160px;
+			top: -180px;
+			background:url(images/weixin.png);
+			display: none;
+		}
+		#kc_nav li{padding:0 5px;margin: 0px auto;}
+		#kc_nav li a{ text-decoration:none; padding:2px 5px;}
+		#kc_nav li a:hover{ color: red;}
+		#kc_nav li a:active{ background:red;color: white;}
+		
+		#fen_ye{
+			text-indent: 1em; 
+			background: #F9F9F9; 
+			height: 50px;
+			line-height: 50px;
+			border-top: 1px solid #D0D6D9;
+		}
+		span a:hover{color:red;}
+		#fen_ye .jihuo{color: #88ABD2;}
+		#kc #thumOne{
+			transition: box-shadow 0.1s ease-in 0s;
+		}
+		#kc #thumOne:hover{
+			box-shadow: 2px 2px  10px 5px #D0D6D9;
+		}
+		.footer{
+			height: 100px;
+			background: black;
+			line-height: 40px;
+		}
+		.footer ul li a{color: #C8CDD2;}
+		.l{position: relative;top:25px;}
+		#share a{padding:5px;}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#nav_collapse li").hover(function(){
+				$(this).addClass('active')
+			},function(){
+				$(this).removeClass('active')
+			});
+
+			$('.elevator-weixin,.elevator-app').hover(function() {
+				$(this).children('div').css('display','block');
+			},function(){
+				$(this).children('div').css('display','none');
+			});
+		})
+	</script>
+</head>
+<body>
+<!-- 导航栏 -->
+<div class="container-fluid">
+	<nav class="navbar navbar-default navbar-form" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav_collapse">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			    </button>
+				<div id="logo" class="logo"><a class="hide-text" target="_self" href="/">慕课网</a></div>				
+			</div>
+			<div class="collapse navbar-collapse" id="nav_collapse">
+				<ul class="nav navbar-nav nav_header">
+					<li><a href="#">首页</a></li>
+					<li><a href="#">实战</a></li>
+					<li><a href="#">路径</a></li>
+					<li><a href="#">源问</a></li>
+					<li><a href="#">专家</a></li>
+				</ul>	
+				<ul class=" nav navbar-nav navbar-right text-center">
+					<li><a href="#" class="glyphicon glyphicon-search" style="height:60px;"></a></li>
+					<li><a href="#" class="glyphicon glyphicon-home gg"></a></li>
+					<li class="dropdown">
+						<a href="#" data-toggle="dropdown" class="gg">登录<span class="caret"></span></a>
+						<ul class="dropdown-menu" style="height:120px;">
+							<li><a href="#">QQ登录</a></li>
+							<li><a href="#">微信登录</a></li>
+							<li><a href="#">邮箱登录</a></li>
+							<li><a href="#">微博登录</a></li>
+						</ul>
+					</li>
+					<li><a href="#" class="gg">注册</a></li>
+				</ul>			
+			</div>			
+		</div>
+	</nav>
+</div>
+<!-- 悬浮窗 -->
+<div id="Goto" class="elevator">
+	<ul class="list-unstyled">
+		<li>
+			<a href="#" title="意见反馈"><i class="glyphicon glyphicon-envelope"></i></a>
+		</li>
+		<li>
+			<a href="javascript:" class="elevator-app" title="app下载"><i class="glyphicon glyphicon-phone"></i><div id="elevator-app"></div></a>
+		</li>
+		<li>
+			<a href="javascript:" class="elevator-weixin" title="官方微信"><i class="glyphicon glyphicon-globe"></i><div id="elevator-weixin"></div></a>
+		</li>
+	</ul>
+</div>
+<ul class="container list-unstyled " id="kc_nav">
+	<h3 class="page-header">全部课程</h3>
+	<li>
+		<ul class="list-inline">		
+			<li style="text-indent: 1em;">方向：</li>
+			<li ><a href="#"> 全部</a></li>
+			<li ><a href="#"> 前端开发</a></li>
+			<li ><a href="#"> 后端开发</a></li>
+			<li ><a href="#"> 移动开发</a></li>
+			<li ><a href="#"> 数据处理</a></li>
+			<li ><a href="#"> 图像处理</a></li>
+		</ul>
+	</li>
+	<hr>
+	<li>
+		<ul class="list-inline">		
+			<li style="text-indent: 1em;">分类：</li>
+			<li ><a href="#"> 全部</a></li>
+			<li ><a href="#"> HTML/CSS</a></li>
+			<li ><a href="#"> JavaScript</a></li>
+			<li ><a href="#"> Html5</a></li>
+			<li ><a href="#"> CSS3</a></li>
+			<li ><a href="#"> jQuery</a></li>
+			<li ><a href="#"> WebApp</a></li>
+			<li ><a href="#"> Node.js</a></li>
+			<li ><a href="#"> AngularJS</a></li>
+		</ul>
+	</li>
+</ul>
+<!-- 分页 -->
+<div id="fen_ye" class="container clearfix">
+	<ul class="list-inline pull-left">
+		<li><a href="#">最新</a></li>
+		<li><a href="#" class="jihuo">最热</a></li>
+	</ul>
+	<div class="pull-right">
+		<span><a href="#" style="text-decoration:none;">隐藏已参加课程</a></span>
+		<span>
+			 <a href="javascript:" class="glyphicon glyphicon-chevron-left" title="上一页"></a>
+			 <b>&nbsp;1</b>/<em>1</em>
+			 <a href="javascript:" class="glyphicon glyphicon-chevron-right" title="下一页"></a>
+		 </span>
+	</div>
+</div>
+<br>
+<!-- 缩略图 thumbnails -->
+<div class="container" id="kc"> 
+	<div class="row">
+		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+			<div class="thumbnail" id="thumOne">
+				<img src="images/1.jpg" class="img-responsive">
+				<div class="caption">
+					<h3 class="bg-info text-center">缩略图Tumbnails</h3>
+					<p class="text-muted">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+				</div>
+				<div class="text-right">
+					<button class="btn btn-warning btn-xs">button</button>
+					<button class="btn btn-info btn-xs">button</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer clearfix navbar-fixed-buttom">	          
+    <div class="container">
+        <div class="pull-left ">
+            <ul class="list-unstyled list-inline l">
+                <li><a href="http://www.imooc.com/" target="_blank">网站首页</a></li>
+                <li><a href="/about/job" target="_blank">人才招聘</a></li>
+                <li><a href="/about/contact" target="_blank">联系我们</a></li>
+                <li><a href="http://yun.imooc.com/" target="_blank">慕课云</a></li>
+                <li><a href="/corp/index" target="_blank">合作专区</a></li>
+                <li><a href="/about/us" target="_blank">关于我们</a></li>
+                <li> <a href="/about/recruit" target="_blank">讲师招募</a></li>
+                <li> <a href="/user/feedback" target="_blank">意见反馈</a></li>
+                <li> <a href="/about/friendly" target="_blank">友情链接</a></li>
+            </ul>
+            <p>Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
+    	</div>   	
+   		 <div class="pull-right l" id="share">
+	        <a class="followus-weixin" href="javascript:;" target="_blank" title="微信"><img src="images/weixin_footer.png" class="img-circle"></a>
+	        <a class="followus-weibo" href="http://weibo.com/u/3306361973" target="_blank" title="新浪微博"><img src="images/weibo_footer.png" class="img-circle"></a>
+	        <a class="followus-qzone" href="http://user.qzone.qq.com/1059809142/" target="_blank" title="QQ空间"><img src="images/qq_footer.png" class="img-circle"></a>
+		</div>
+	</div>  
+</div>	
+</body>
+</html>
